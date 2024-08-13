@@ -7,7 +7,7 @@ export default function FeatureItem({ icon, text }) {
         <img
             loading="lazy" 
             src={icon} 
-            alt={feature.text}
+            alt={icon.text}
             className="object-contain shrink-0 w-5 aspect-square" 
         />
       <div className="flex-auto">{text}</div>

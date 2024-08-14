@@ -1,6 +1,7 @@
-import Image from "next/image";
-// import React from 'react';
+import React from "react";
 import FeatureItem from "@/components/FeatureItem";
+import Travel from "@/components/Travel";
+import Works from "@/components/Works";
 
 // Array of Icons and text
 const features = [
@@ -20,9 +21,9 @@ const features = [
 
 export default function Home() {
   return (
-    <main className="flex flex-col rounded-none">
+    <main>
       <div className="flex flex-col justify-center items-center px-16 py-32 w-full min-h-[501px] max-md:px-5 max-md:py-24">
-        <div className="fixed px-9 pt-9 pb-16 mb-0 w-lg bg-green-700 rounded-[30px] max-md:px-5 max-md:mb-2.5">
+        <div className="flex px-9 pt-9 pb-16 mb-0 w-lg bg-green-700 rounded-[30px] max-md:px-5 max-md:mb-2.5">
           <div className="flex gap-5 max-md:flex-col">
             <div className="flex flex-col w-[45%] max-md:ml-0 max-md:w-full">
               <div className="flex flex-col w-full max-md:mt-10">
@@ -30,27 +31,30 @@ export default function Home() {
                   Need Help Planning? <br /> Go with the experts.
                 </h1>
                 {/* Budget Form */}
-                <form className="flex gap-5 justify-between pl-4 mt-5 max-w-full text-black bg-white rounded-xl w-[322px]">
-                  <label htmlFor="budget" className="sr-only">Enter your budget</label>
-                  <input
-                    type="text"
-                    id="budget"
-                    placeholder="Enter your budget"
-                    className="my-auto text-xs bg-transparent"
-                    aria-label="Enter your budget"
-                  />
-                  {/* Seach Button */}
-                  <button type="submit" className="z-10 px-6 py-2.5 text-sm whitespace-nowrap bg-amber-400 rounded-md max-md:px-5 max-md:-mr-0.5">
-                    Search
-                  </button>
-                  {/* End of Search Button */}
-                </form>
+                <div className="flex justify-start items-start">
+                  <form className="gap-5 pl-4 mt-5 max-w-full text-black bg-white rounded-sm w-[306px]">
+                    <label htmlFor="budget" className="sr-only">Enter your budget</label>
+                    <input
+                      type="text"
+                      id="budget"
+                      placeholder="Enter your budget"
+                      className="my-auto text-sm bg-transparent"
+                      aria-label="Enter your budget"
+                    />
+                    {/* Seach Button */}
+      
+                      <button type="submit" className="ml-9 z-10 px-6 py-2.5 text-sm whitespace-nowrap bg-amber-400 rounded-sm max-md:px-5 max-md:-mr-0.5">
+                        Search
+                      </button>
+                    {/* End of Search Button */}
+                  </form>
+                </div>
                 {/* End of Budget Form */}
               </div>
             </div>
             {/* Array of icons and text next to it */}
-            <div className="flex flex-col ml-5 w-[55%] max-md:ml-0 max-md:w-full">
-              <div className="flex relative flex-col items-start mt-5 w-full text-base text-white max-md:mt-10 max-md:max-w-full">
+            <div className="flex flex-col ml-6 w-[55%] max-md:ml-0 max-md:w-full">
+              <div className="flex flex-col items-start w-full text-base text-white max-md:mt-10 max-md:max-w-full">
                 {features.map((feature, index) => (
                   <FeatureItem key={index} icon={feature.icon} text={feature.text} />
                 ))}
@@ -61,6 +65,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* Beginning of Business travel card */}
+      <Travel />
+      {/* End of Business Travel Card */}
+      <Works />
     </main>
   );
 }
